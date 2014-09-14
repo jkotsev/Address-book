@@ -1,0 +1,3 @@
+Address-book
+============
+The current project is with the purpose of creating fast, easy and comfortably address book as application, part of your desktop. This application could be a part of your daily work tasks or could store your contacts of your friends and family, in practice it is solution you can use it everywhere. In the left side of the form is situated the list of contacts which stores the data in XML file, intellisense search field is above it and for user comfort the remove button is just below it. In the middle of the form is the main information for the person, the buttons “Add contact” and “Save Changes”. In the right side is situated the picture of the person and “Browse” button for attaching it.
