@@ -18,7 +18,8 @@ namespace AddressBook
         {
             InitializeComponent();
         }
-        List<Contacts> contacts = new List<Contacts>();
+        List<Contact> contacts = new List<Contact>();
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -40,7 +41,7 @@ namespace AddressBook
             xDoc.Load(path + "\\Address Book\\store.xml");
             foreach (XmlNode xNode in xDoc.SelectNodes("Contacts/Contacts"))
             {
-                Contacts c = new Contacts();
+                Contact c = new Contact();
                 c.Name = xNode.SelectSingleNode("Name").InnerText;
                 c.Email = xNode.SelectSingleNode("Email").InnerText;
                 c.Phone = xNode.SelectSingleNode("Phone").InnerText;
@@ -48,57 +49,54 @@ namespace AddressBook
              
 
                 contacts.Add(c);
-                listView1.Items.Add(c.Name);
+                listViewContacts.Items.Add(c.Name);
             }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Contacts c = new Contacts();
-            c.Name = textBox1.Text;
-            c.Email = textBox2.Text;
-            c.Phone = textBox3.Text;
-            c.Address = textBox4.Text;
-            c.Photo = pictureBox1.Image;
+            Contact c = new Contact();
+            c.Name = textBoxName.Text;
+            c.Email = textBoxEmail.Text;
+            c.Phone = textBoxPhone.Text;
+            c.Address = textBoxAddress.Text;
+            c.Photo = pictureBoxPhoto.Image;
 
 
             contacts.Add(c);
-            listView1.Items.Add(c.Name);
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            pictureBox1.Image = pictureBox1.Image;
+            listViewContacts.Items.Add(c.Name);
+            textBoxName.Text = "";
+            textBoxEmail.Text = "";
+            textBoxPhone.Text = "";
+            textBoxAddress.Text = "";
+            pictureBoxPhoto.Image = pictureBoxPhoto.Image;
 
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox1.Text = contacts[listView1.SelectedItems[0].Index].Name;
-            textBox2.Text = contacts[listView1.SelectedItems[0].Index].Email;
-            textBox3.Text = contacts[listView1.SelectedItems[0].Index].Phone;
-            textBox4.Text = contacts[listView1.SelectedItems[0].Index].Address;
-            pictureBox1.Image = contacts[listView1.SelectedItems[0].Index].Photo;
-            listView1.SelectedItems[0].Text = textBox1.Text;
-
+           
+            if (listViewContacts.SelectedItems.Count > 0)
+            textBoxName.Text = contacts[listViewContacts.SelectedItems[0].Index].Name;
+            textBoxEmail.Text = contacts[listViewContacts.SelectedItems[0].Index].Email;
+            textBoxPhone.Text = contacts[listViewContacts.SelectedItems[0].Index].Phone;
+            textBoxAddress.Text = contacts[listViewContacts.SelectedItems[0].Index].Address;
+            pictureBoxPhoto.Image = contacts[listViewContacts.SelectedItems[0].Index].Photo;
+            listViewContacts.SelectedItems[0].Text = textBoxName.Text;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            listViewContacts.Items.Clear();
         }
 
         void Remove()
         {
-            try
-            {
-                listView1.Items.Remove(listView1.SelectedItems[0]);
-                contacts.RemoveAt(listView1.SelectedItems[0].Index);
-            }
-            catch { }
-
-
+          
+        listViewContacts.Items.Remove(listViewContacts.SelectedItems[0]);
+        contacts.RemoveAt(listViewContacts.SelectedItems[0].Index);
+        
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,18 +109,20 @@ namespace AddressBook
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                pictureBox1.ImageLocation = ofd.FileName;
+                pictureBoxPhoto.ImageLocation = ofd.FileName;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
+        
         {
-            contacts[listView1.SelectedItems[0].Index].Name = textBox1.Text;
-            contacts[listView1.SelectedItems[0].Index].Email = textBox2.Text;
-            contacts[listView1.SelectedItems[0].Index].Phone = textBox3.Text;
-            contacts[listView1.SelectedItems[0].Index].Address = textBox4.Text;
-            contacts[listView1.SelectedItems[0].Index].Photo = pictureBox1.Image;
-
+            buttonUpdate.Enabled = false;
+            if (listViewContacts.SelectedItems.Count > 0)
+            contacts[listViewContacts.SelectedItems[0].Index].Name = textBoxName.Text;
+            contacts[listViewContacts.SelectedItems[0].Index].Email = textBoxEmail.Text;
+            contacts[listViewContacts.SelectedItems[0].Index].Phone = textBoxPhone.Text;
+            contacts[listViewContacts.SelectedItems[0].Index].Address = textBoxAddress.Text;
+            contacts[listViewContacts.SelectedItems[0].Index].Photo = pictureBoxPhoto.Image;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -132,7 +132,7 @@ namespace AddressBook
             xDoc.Load(path + "\\Address Book\\store.xml");
             XmlNode xNode = xDoc.SelectSingleNode("Contacts");
             xNode.RemoveAll();
-            foreach (Contacts c in contacts)
+            foreach (Contact c in contacts)
             {
                 XmlNode xTop = xDoc.CreateElement("Contacts");
                 XmlNode xName = xDoc.CreateElement("Name");
@@ -145,7 +145,6 @@ namespace AddressBook
                 xPhone.InnerText = c.Phone;
                 xAddress.InnerText = c.Address;
                 
-
                 xTop.AppendChild(xName);
                 xTop.AppendChild(xEmail);
                 xTop.AppendChild(xPhone);
@@ -176,13 +175,13 @@ namespace AddressBook
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
-            listView1.Items.Clear();
+            listViewContacts.Items.Clear();
 
             foreach (string str in items)
             {
-                if (str.StartsWith(textBox1.Text, StringComparison.CurrentCultureIgnoreCase))
+                if (str.StartsWith(textBoxName.Text, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    listView1.Items.Add(str);
+                    listViewContacts.Items.Add(str);
                 }
             }
         }
@@ -193,39 +192,15 @@ namespace AddressBook
 
             foreach (string str in items)
             {
-                listView1.Items.Add(str);
+                listViewContacts.Items.Add(str);
             }
         }
 
-    }
-    }
-    class Contacts
-    {
-        public string Name
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            get;
-            set;
-        }
-        public string Email
-        {
-            get;
-            set;
-        }
-        public string Phone
-        {
-            get;
-            set;
-        }
-        public string Address
-        {
-            get;
-            set;
-        }
-        public Image Photo
-        {
-            get;
-            set;
-        }
-    }
 
+        }
 
+    }
+ }
+    

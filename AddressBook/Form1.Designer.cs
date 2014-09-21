@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonRemove = new System.Windows.Forms.Button();
+            this.listViewContacts = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonAddContact = new System.Windows.Forms.Button();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,16 +52,16 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.textBoxSearch);
+            this.groupBox1.Controls.Add(this.buttonRemove);
+            this.groupBox1.Controls.Add(this.listViewContacts);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(188, 199);
@@ -79,45 +79,45 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Search";
             // 
-            // textBox5
+            // textBoxSearch
             // 
-            this.textBox5.Location = new System.Drawing.Point(47, 25);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(134, 20);
-            this.textBox5.TabIndex = 15;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBoxSearch.Location = new System.Drawing.Point(47, 25);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(134, 20);
+            this.textBoxSearch.TabIndex = 15;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // button3
+            // buttonRemove
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(47, 166);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Remove";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonRemove.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonRemove.Location = new System.Drawing.Point(47, 166);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(98, 23);
+            this.buttonRemove.TabIndex = 12;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = false;
+            this.buttonRemove.Click += new System.EventHandler(this.button3_Click);
             // 
-            // listView1
+            // listViewContacts
             // 
-            this.listView1.Location = new System.Drawing.Point(6, 51);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(175, 109);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listViewContacts.Location = new System.Drawing.Point(6, 51);
+            this.listViewContacts.Name = "listViewContacts";
+            this.listViewContacts.Size = new System.Drawing.Size(175, 109);
+            this.listViewContacts.TabIndex = 0;
+            this.listViewContacts.UseCompatibleStateImageBehavior = false;
+            this.listViewContacts.View = System.Windows.Forms.View.List;
+            this.listViewContacts.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.buttonAddContact);
+            this.groupBox2.Controls.Add(this.buttonBrowse);
+            this.groupBox2.Controls.Add(this.buttonUpdate);
+            this.groupBox2.Controls.Add(this.pictureBoxPhoto);
+            this.groupBox2.Controls.Add(this.textBoxAddress);
+            this.groupBox2.Controls.Add(this.textBoxPhone);
+            this.groupBox2.Controls.Add(this.textBoxEmail);
+            this.groupBox2.Controls.Add(this.textBoxName);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -130,78 +130,79 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personal information";
             // 
-            // button2
+            // buttonAddContact
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(3, 166);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Add contact";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonAddContact.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAddContact.Location = new System.Drawing.Point(3, 166);
+            this.buttonAddContact.Name = "buttonAddContact";
+            this.buttonAddContact.Size = new System.Drawing.Size(98, 23);
+            this.buttonAddContact.TabIndex = 11;
+            this.buttonAddContact.Text = "Add contact";
+            this.buttonAddContact.UseVisualStyleBackColor = false;
+            this.buttonAddContact.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // buttonBrowse
             // 
-            this.button4.Location = new System.Drawing.Point(214, 166);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Browse";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonBrowse.Location = new System.Drawing.Point(214, 166);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(101, 23);
+            this.buttonBrowse.TabIndex = 13;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button1
+            // buttonUpdate
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(107, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Save Changes";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonUpdate.Location = new System.Drawing.Point(107, 166);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(101, 23);
+            this.buttonUpdate.TabIndex = 10;
+            this.buttonUpdate.Text = "Update contact";
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // pictureBoxPhoto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(213, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 131);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBoxPhoto.BackColor = System.Drawing.Color.White;
+            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(213, 29);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(101, 131);
+            this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxPhoto.TabIndex = 9;
+            this.pictureBoxPhoto.TabStop = false;
+            this.pictureBoxPhoto.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox4
+            // textBoxAddress
             // 
-            this.textBox4.Location = new System.Drawing.Point(48, 140);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 20);
-            this.textBox4.TabIndex = 8;
+            this.textBoxAddress.Location = new System.Drawing.Point(48, 140);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(150, 20);
+            this.textBoxAddress.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(48, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 20);
-            this.textBox3.TabIndex = 7;
+            this.textBoxPhone.Location = new System.Drawing.Point(48, 103);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(150, 20);
+            this.textBoxPhone.TabIndex = 7;
             // 
-            // textBox2
+            // textBoxEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBoxEmail.Location = new System.Drawing.Point(48, 68);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(150, 20);
+            this.textBoxEmail.TabIndex = 6;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxName.Location = new System.Drawing.Point(48, 32);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(150, 20);
+            this.textBoxName.TabIndex = 5;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -266,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 218);
+            this.ClientSize = new System.Drawing.Size(535, 217);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -279,7 +280,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -288,25 +289,25 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewContacts;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBoxPhoto;
+        private System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.Button buttonAddContact;
+        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label label6;
     }
 }
