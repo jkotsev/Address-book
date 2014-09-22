@@ -1,0 +1,9 @@
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\obj\Debug\AddressBook.csprojResolveAssemblyReference.cache
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\obj\Debug\AddressBook.Form1.resources
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\obj\Debug\AddressBook.Properties.Resources.resources
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\obj\Debug\AddressBook.csproj.GenerateResource.Cache
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\bin\Debug\AddressBook.exe.config
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\bin\Debug\AddressBook.exe
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\bin\Debug\AddressBook.pdb
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\obj\Debug\AddressBook.exe
+Z:\Projects\C#Projects\JKotsev_Infragistics\AddressBook\obj\Debug\AddressBook.pdb

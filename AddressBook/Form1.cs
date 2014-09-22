@@ -46,13 +46,10 @@ namespace AddressBook
                 c.Email = xNode.SelectSingleNode("Email").InnerText;
                 c.Phone = xNode.SelectSingleNode("Phone").InnerText;
                 c.Address = xNode.SelectSingleNode("Address").InnerText;
-             
                 contacts.Add(c);
                 listViewContacts.Items.Add(c.Name);
             }
-
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Contact c = new Contact();
@@ -69,9 +66,7 @@ namespace AddressBook
             textBoxPhone.Text = "";
             textBoxAddress.Text = "";
             pictureBoxPhoto.Image = pictureBoxPhoto.Image;
-
         }
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonUpdate.Enabled = listViewContacts.SelectedItems.Count > 0;
@@ -90,7 +85,6 @@ namespace AddressBook
 
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem eachItem in listViewContacts.SelectedItems)
@@ -98,7 +92,6 @@ namespace AddressBook
                 listViewContacts.Items.Remove(eachItem);
             }
         }
-
         void Remove()
         {
             try
@@ -111,12 +104,10 @@ namespace AddressBook
    
             }
         }
-
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Remove();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -125,7 +116,6 @@ namespace AddressBook
                 pictureBoxPhoto.ImageLocation = ofd.FileName;
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -142,7 +132,6 @@ namespace AddressBook
               
             }
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             XmlDocument xDoc = new XmlDocument();
@@ -172,24 +161,20 @@ namespace AddressBook
             }
             xDoc.Save(path + "\\Address Book\\store.xml");
         }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         List<string> items = new List<string>();
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             
         }
-
         private void Form_Load1(object sender, EventArgs e)
         {
             items.AddRange(new string[] { });
@@ -199,12 +184,10 @@ namespace AddressBook
                 listViewContacts.Items.Add(str);
             }
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
     }
  }
     
