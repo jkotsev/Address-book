@@ -81,6 +81,7 @@
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBoxSearch.Location = new System.Drawing.Point(47, 25);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(134, 20);
@@ -154,6 +155,7 @@
             // buttonUpdate
             // 
             this.buttonUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonUpdate.Enabled = false;
             this.buttonUpdate.Location = new System.Drawing.Point(107, 166);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(101, 23);

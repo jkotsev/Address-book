@@ -47,7 +47,6 @@ namespace AddressBook
                 c.Phone = xNode.SelectSingleNode("Phone").InnerText;
                 c.Address = xNode.SelectSingleNode("Address").InnerText;
              
-
                 contacts.Add(c);
                 listViewContacts.Items.Add(c.Name);
             }
@@ -63,7 +62,6 @@ namespace AddressBook
             c.Address = textBoxAddress.Text;
             c.Photo = pictureBoxPhoto.Image;
 
-
             contacts.Add(c);
             listViewContacts.Items.Add(c.Name);
             textBoxName.Text = "";
@@ -76,27 +74,42 @@ namespace AddressBook
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            if (listViewContacts.SelectedItems.Count > 0)
-            textBoxName.Text = contacts[listViewContacts.SelectedItems[0].Index].Name;
-            textBoxEmail.Text = contacts[listViewContacts.SelectedItems[0].Index].Email;
-            textBoxPhone.Text = contacts[listViewContacts.SelectedItems[0].Index].Phone;
-            textBoxAddress.Text = contacts[listViewContacts.SelectedItems[0].Index].Address;
-            pictureBoxPhoto.Image = contacts[listViewContacts.SelectedItems[0].Index].Photo;
-            listViewContacts.SelectedItems[0].Text = textBoxName.Text;
+            buttonUpdate.Enabled = listViewContacts.SelectedItems.Count > 0;
+            try
+            {
+                if (listViewContacts.SelectedItems.Count > 0)
+                textBoxName.Text = contacts[listViewContacts.SelectedItems[0].Index].Name;
+                textBoxEmail.Text = contacts[listViewContacts.SelectedItems[0].Index].Email;
+                textBoxPhone.Text = contacts[listViewContacts.SelectedItems[0].Index].Phone;
+                textBoxAddress.Text = contacts[listViewContacts.SelectedItems[0].Index].Address;
+                pictureBoxPhoto.Image = contacts[listViewContacts.SelectedItems[0].Index].Photo;
+                listViewContacts.SelectedItems[0].Text = textBoxName.Text;
+            }
+            catch (Exception)
+            { 
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listViewContacts.Items.Clear();
+            foreach (ListViewItem eachItem in listViewContacts.SelectedItems)
+            {
+                listViewContacts.Items.Remove(eachItem);
+            }
         }
 
         void Remove()
         {
-          
-        listViewContacts.Items.Remove(listViewContacts.SelectedItems[0]);
-        contacts.RemoveAt(listViewContacts.SelectedItems[0].Index);
-        
+            try
+            {
+                listViewContacts.Items.Remove(listViewContacts.SelectedItems[0]);
+                contacts.RemoveAt(listViewContacts.SelectedItems[0].Index);
+            }
+            catch (Exception)
+            {
+   
+            }
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,15 +127,20 @@ namespace AddressBook
         }
 
         private void button1_Click(object sender, EventArgs e)
-        
         {
-            buttonUpdate.Enabled = false;
-            if (listViewContacts.SelectedItems.Count > 0)
-            contacts[listViewContacts.SelectedItems[0].Index].Name = textBoxName.Text;
-            contacts[listViewContacts.SelectedItems[0].Index].Email = textBoxEmail.Text;
-            contacts[listViewContacts.SelectedItems[0].Index].Phone = textBoxPhone.Text;
-            contacts[listViewContacts.SelectedItems[0].Index].Address = textBoxAddress.Text;
-            contacts[listViewContacts.SelectedItems[0].Index].Photo = pictureBoxPhoto.Image;
+            try
+            {
+                if (listViewContacts.SelectedItems.Count > 0)
+                contacts[listViewContacts.SelectedItems[0].Index].Name = textBoxName.Text;
+                contacts[listViewContacts.SelectedItems[0].Index].Email = textBoxEmail.Text;
+                contacts[listViewContacts.SelectedItems[0].Index].Phone = textBoxPhone.Text;
+                contacts[listViewContacts.SelectedItems[0].Index].Address = textBoxAddress.Text;
+                contacts[listViewContacts.SelectedItems[0].Index].Photo = pictureBoxPhoto.Image;
+            }
+            catch (Exception)
+            {
+              
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -165,25 +183,11 @@ namespace AddressBook
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-       
-        }
-
         List<string> items = new List<string>();
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
-            listViewContacts.Items.Clear();
-
-            foreach (string str in items)
-            {
-                if (str.StartsWith(textBoxName.Text, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    listViewContacts.Items.Add(str);
-                }
-            }
+            
         }
 
         private void Form_Load1(object sender, EventArgs e)
